@@ -1,4 +1,11 @@
 public class Computer extends Player{
+
+    @Override
+    public void nextMove() {
+        Board.takeTiles(calculateMove(Board.getBoardTiles()));
+        setTurn(false);
+    }
+    
     public int calculateMove(int tiles) {
         int target = 1;
         int power = -1;
