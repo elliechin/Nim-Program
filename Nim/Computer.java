@@ -1,8 +1,17 @@
+/*
+ * @Author Megan
+ */
+
 public class Computer extends Player{
 
+    public Computer(){
+        System.out.println("Computer created");
+        
+    }
+
     @Override
-    public void nextMove() {
-        Board.takeTiles(calculateMove(Board.getBoardTiles()));
+    public void nextTurn() {
+        Board.takeBoardTiles(calculateMove(Board.getBoardTiles()));
         setTurn(false);
     }
     
@@ -13,10 +22,12 @@ public class Computer extends Player{
             target *= 2;
             power++;
         }
-        if(tiles - Math.pow(2, power) + 1 == 0) {
+        int num = (int) Math.pow(2, power) - 1;
+        if(tiles - num == 0 || tiles - num > tiles / 2) {
             return 1;
         } else {
-            return tiles - Math.pow(2, power) + 1;
-        }
+            System.out.println("Computer took " + (tiles - num) + "tiles");
+            return tiles - num;
+        }   
     }
 }
