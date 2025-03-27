@@ -16,7 +16,7 @@ public class Player{
     public Player(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter username");
-        this.name = scanner.nextLine();
+        this.name = scanner.nextLine();       
         System.out.println("Welcome " + name  + "!\n");
         this.score = 0;
     }
