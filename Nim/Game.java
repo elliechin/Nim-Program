@@ -7,16 +7,29 @@
 public class Game{
 
     private Player player1, player2;
-    
+    // private Computer cpu;
     // Scanner scanner = new Scanner(System.in);
 
     // game creates players
     public Game(){
-        this.player1 = new Player();
-        this.player2 = new Player();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like to play against another player or a computer?");
+        String gameType = scanner.nextLine().toLowerCase();
+        if (gameType.equals("player")){
+            this.player1 = new Player();
+            this.player2 = new Player();
+            System.out.println("Game: Player vs Player");
+        } else if (gameType.equals("computer") || gameType.equals("cpu")){
+            this.player1 = new Player();
+            this.player2 = new Computer();
+            System.out.println("Game: Player vs CPU");
+        }
+        
     }
 
     public void play(){
+        
+    
         int start = (int) (Math.random() * 2);
        
         // sets initial turn booleans in respective Player classes
