@@ -35,6 +35,7 @@ public class Game{
     
         while (!gameover){
 
+            // lets player1 take their turn
             if (player1.getTurn() == true) {
                 // if there is one tile left on the board
                 if (Board.getBoardTiles() == 1) {
@@ -48,11 +49,13 @@ public class Game{
                     player1.nextTurn();
                 }
                
-                // checks if the Player's turn has ended yet
+                // switches the turn to player2
                 if (player1.getTurn() == false) {
                     player2.setTurn(true);
                 }
             } else {
+
+                // lets player2 take their turn
                 if (Board.getBoardTiles() == 1) {
                     gameover = true;
                     player1.win();
@@ -62,7 +65,7 @@ public class Game{
                     player2.nextTurn();
                 }
 
-                // checks if the Player's turn has ended yet
+                // switches the turn to player1
                 if (player2.getTurn() == false) {
                     player1.setTurn(true);
                 }
