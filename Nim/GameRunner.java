@@ -1,3 +1,7 @@
+/*
+ * @Author Ellie Chin
+ * Megan debugged my code and helped with logic errors
+ */
 public class GameRunner
 {
   public static void main(String[] args)
